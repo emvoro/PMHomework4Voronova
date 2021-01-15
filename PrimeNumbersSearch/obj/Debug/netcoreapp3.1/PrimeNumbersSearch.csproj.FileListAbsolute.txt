@@ -1,0 +1,14 @@
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\bin\Debug\netcoreapp3.1\PrimeNumbersSearch.exe
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\bin\Debug\netcoreapp3.1\settings.json
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\bin\Debug\netcoreapp3.1\PrimeNumbersSearch.deps.json
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\bin\Debug\netcoreapp3.1\PrimeNumbersSearch.runtimeconfig.json
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\bin\Debug\netcoreapp3.1\PrimeNumbersSearch.runtimeconfig.dev.json
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\bin\Debug\netcoreapp3.1\PrimeNumbersSearch.dll
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\bin\Debug\netcoreapp3.1\PrimeNumbersSearch.pdb
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\obj\Debug\netcoreapp3.1\PrimeNumbersSearch.csprojAssemblyReference.cache
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\obj\Debug\netcoreapp3.1\PrimeNumbersSearch.AssemblyInfoInputs.cache
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\obj\Debug\netcoreapp3.1\PrimeNumbersSearch.AssemblyInfo.cs
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\obj\Debug\netcoreapp3.1\PrimeNumbersSearch.csproj.CoreCompileInputs.cache
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\obj\Debug\netcoreapp3.1\PrimeNumbersSearch.dll
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\obj\Debug\netcoreapp3.1\PrimeNumbersSearch.pdb
+C:\Users\Emily\source\repos\PMHomework4Voronova\PrimeNumbersSearch\obj\Debug\netcoreapp3.1\PrimeNumbersSearch.genruntimeconfig.cache

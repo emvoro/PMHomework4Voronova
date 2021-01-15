@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3KJKUjhjoQDV0K/o2k0pgaisq+q0T8+7BpXQ2+6PpdY51h2SdcTy4W5qSW/x8ap/QajP07TetdZ/TMuVa8fyPQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Emily\\source\\repos\\PMHomework4Voronova\\CurrencyConverter\\CurrencyConverter.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Emily\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

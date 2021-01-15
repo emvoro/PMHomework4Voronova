@@ -1,0 +1,15 @@
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\bin\Debug\netcoreapp3.1\Notes.exe
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\bin\Debug\netcoreapp3.1\Notes.deps.json
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\bin\Debug\netcoreapp3.1\Notes.runtimeconfig.json
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\bin\Debug\netcoreapp3.1\Notes.runtimeconfig.dev.json
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\bin\Debug\netcoreapp3.1\Notes.dll
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\bin\Debug\netcoreapp3.1\Notes.pdb
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\obj\Debug\netcoreapp3.1\Notes.csprojAssemblyReference.cache
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\obj\Debug\netcoreapp3.1\Notes.AssemblyInfoInputs.cache
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\obj\Debug\netcoreapp3.1\Notes.AssemblyInfo.cs
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\obj\Debug\netcoreapp3.1\Notes.csproj.CoreCompileInputs.cache
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\obj\Debug\netcoreapp3.1\Notes.csproj.CopyComplete
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\obj\Debug\netcoreapp3.1\Notes.dll
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\obj\Debug\netcoreapp3.1\Notes.pdb
+C:\Users\Emily\source\repos\PMHomework4Voronova\Notes\obj\Debug\netcoreapp3.1\Notes.genruntimeconfig.cache
