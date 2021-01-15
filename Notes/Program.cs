@@ -9,28 +9,13 @@ namespace Notes
 {
     class Program
     {
-        static void PrintNote(Note note)
-        {
-            Console.WriteLine(
-                $"\n Note       : {note.Id}" +
-                $"\n Header     : {note.Header}" +
-                $"\n Text       : {note.Text}" +
-                $"\n Created On : {note.CreatedOn} " +
-                $"\n");
-        }
-
         static void Main(string[] args)
         {
             Console.WriteLine(" Notes\n Emilia Voronova\n");
             int command = 0;
             while (command != 5)
             {
-                Console.WriteLine("\n Enter command :");
-                Console.WriteLine(" 1. Search Note");
-                Console.WriteLine(" 2. View Note");
-                Console.WriteLine(" 3. Create Note");
-                Console.WriteLine(" 4. Delete Note");
-                Console.WriteLine(" 5. Exit");
+                Console.WriteLine("\n Enter command :\n 1. Search Note\n 2. View Note\n 3. Create Note\n 4. Delete Note\n 5. Exit");
                 HashSet<Note> notes = new HashSet<Note>();
                 int id = 1;
                 if (File.Exists("notes.json"))
@@ -49,15 +34,20 @@ namespace Notes
                         List<Note> filtered = notes.Where(x => x.Text.Contains(filter)).OrderBy(x => x.Id).ToList();
                         Console.WriteLine(" Search results :");
                         foreach (Note filteredNote in filtered)
-                            PrintNote(filteredNote);
-                        break;
+                        Console.WriteLine($"\n Note       : {filteredNote.Id}\n Header     : {filteredNote.Header}" +
+                                        $"\n Created On : {filteredNote.CreatedOn}\n");
+                    break;
                     case 2:
                         Console.WriteLine(" Enter an id to view the note :");
                         int search;
                         while (!int.TryParse(Console.ReadLine(), out search))
-                            Console.WriteLine(" Incorrect id.");
+                            Console.WriteLine(" Invalid id. Enter an id :");
                         if (notes.Any(x => x.Id == search))
-                            PrintNote(notes.Where(x => x.Id == search).First());
+                        {
+                            Note searchedNote = notes.Where(x => x.Id == search).First();
+                            Console.WriteLine($"\n Note       : {searchedNote.Id}\n Header     : {searchedNote.Header}" +
+                                            $"\n Text       : {searchedNote.Text}\n Created On : {searchedNote.CreatedOn}\n");
+                        }
                         else
                             Console.WriteLine(" Note with such id doesn't exist.");
                         break;
@@ -72,8 +62,7 @@ namespace Notes
                             else
                                 header = text;
                             notes.Add(new Note(id, header, text, DateTime.UtcNow));
-                            var clone = JsonConvert.SerializeObject(notes);
-                            var jArray = JArray.Parse(clone).ToString();
+                            var jArray = JArray.Parse(JsonConvert.SerializeObject(notes)).ToString();
                             File.WriteAllText("notes.json", jArray);
                             Console.WriteLine(" Note cteated.");
                         }
@@ -87,6 +76,9 @@ namespace Notes
                             Console.WriteLine(" Incorrect identifier.");
                         if (notes.Any(x => x.Id == identifier))
                         {
+                            Note noteToDelete = notes.Where(x => x.Id == identifier).First();
+                            Console.WriteLine($"\n Note       : {noteToDelete.Id}\n Header     : {noteToDelete.Header}" +
+                                            $"\n Text       : {noteToDelete.Text}\n Created On : {noteToDelete.CreatedOn}\n");
                             Console.WriteLine(" Are you sure you want to delete the note? y/n");
                             string reply = Console.ReadLine();
                             while (reply != "y" && reply != "n" && reply != "Y" && reply != "N")
@@ -95,7 +87,7 @@ namespace Notes
                             {
                                 case "Y":
                                 case "y":
-                                    notes.Remove(notes.Where(x => x.Id == identifier).First());
+                                    notes.Remove(noteToDelete);
                                     var clone = JsonConvert.SerializeObject(notes);
                                     File.WriteAllText("notes.json", clone);
                                     Console.WriteLine($" Note with id {identifier} is deleted.");

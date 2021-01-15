@@ -13,13 +13,15 @@ namespace CurrencyConverter
     {
         static async Task Main(string[] args)
         {
-            CultureInfo cultureInfo = CultureInfo.InvariantCulture;
-            Console.WriteLine(" Currency Converter \n Emilia Voronova\n");
+            NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
             var uri = new Uri("https://bank.gov.ua");
             var httpClient = new HttpClient();
             httpClient.BaseAddress = uri;
             string body = "";
             HashSet<Currency> currencies = new HashSet<Currency>();
+
+            Console.WriteLine(" Currency Converter \n Emilia Voronova\n");
+
             try
             {
                 var response = await httpClient.GetAsync("/NBUStatService/v1/statdirectory/exchange?json");
@@ -47,7 +49,7 @@ namespace CurrencyConverter
                 initialCurrency = Console.ReadLine().Trim().ToUpper();
             }
             Console.WriteLine(" Enter desired currency :");
-            string desiredCurrency = Console.ReadLine().ToUpper();
+            string desiredCurrency = Console.ReadLine().Trim().ToUpper();
             while (desiredCurrency.Trim().Length != 3)
             {
                 Console.WriteLine(" Enter desired currency :");
@@ -55,7 +57,7 @@ namespace CurrencyConverter
             }
             Console.WriteLine(" Enter amount :");
             decimal amount;
-            while (!decimal.TryParse(Console.ReadLine(), NumberStyles.Any, cultureInfo, out amount))
+            while (!decimal.TryParse(Console.ReadLine().Replace(',', '.'), NumberStyles.Any, nfi, out amount) || amount <= 0)
                 Console.WriteLine(" Enter amount :");
 
             decimal currency = 0;
@@ -71,7 +73,7 @@ namespace CurrencyConverter
             }
             else if ((currencies.Any(x => x.Cc == initialCurrency) || currencies.Any(x => x.Cc == desiredCurrency))
                 && (initialCurrency == "UAH" || desiredCurrency == "UAH"))
-            { 
+            {
                 if (initialCurrency == "UAH")
                 {
                     decimal desiredCourse = currencies.Where(x => x.Cc == desiredCurrency).Select(x => x.Rate).First();
@@ -87,7 +89,7 @@ namespace CurrencyConverter
                 isValid = true;
             }
 
-            if (isValid)
+            if (isValid || initialCurrency == desiredCurrency)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"\n Initial amount : {amount} {initialCurrency}" +
@@ -97,11 +99,8 @@ namespace CurrencyConverter
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                if (initialCurrency == desiredCurrency)
-                    Console.WriteLine($"\n You have entered the same currency.");
-                else
-                    Console.WriteLine($"\n Error. {initialCurrency}, {desiredCurrency} pair is not found."); 
+                Console.ForegroundColor = ConsoleColor.Red; 
+                Console.WriteLine($"\n Error. {initialCurrency}, {desiredCurrency} pair is not found."); 
             }
             Console.ForegroundColor = ConsoleColor.Gray;
         }
